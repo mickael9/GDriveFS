@@ -24,8 +24,9 @@ class DisplacedFile(object):
         self.__normalized_entry = normalized_entry
         self.__filepath = tempfile.NamedTemporaryFile(delete=False).name
 
-    def __del__(self):
-        os.unlink(self.__filepath)
+# TODO: find a good place to delete this file
+#    def __del__(self):
+#        os.unlink(self.__filepath)
 
     def deposit_file(self, mime_type):
         """Write the file to a temporary path, and present a stub (JSON) to the 
